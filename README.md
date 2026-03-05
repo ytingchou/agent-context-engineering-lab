@@ -6,6 +6,38 @@
 - 每一步都提供 Markdown prompt、解釋、示範、驗收點、失敗修正。
 - 最後用單一 Capstone Prompt 組成 Delphi -> Next.js AI pipeline（純 prompt 模擬）。
 
+## 學習旅程主軸
+```text
+Prompt Engineering
+        ↓
+Context Engineering
+        ↓
+Agent Skills
+        ↓
+Agent Pipelines
+        ↓
+AI-assisted Software Migration
+```
+
+對應文件：
+- [LEARNING-JOURNEY.md](./LEARNING-JOURNEY.md)
+- [DELPHI-TO-NEXTJS-PIPELINE.md](./pipelines/DELPHI-TO-NEXTJS-PIPELINE.md)
+
+## 最終產物鏈
+```text
+Delphi Source
+     ↓
+DFM Analyzer
+     ↓
+Context Summary
+     ↓
+ASCII UI Layout
+     ↓
+Pseudo React
+     ↓
+Next.js Page
+```
+
 ## 前置條件
 - 開發環境：`Cline + Qwen3`。
 - 模型上下文：`128k token`。
@@ -17,16 +49,44 @@
 npm run check
 npm run sessions:list
 npm run prompts:list
+npm run session:run:any -- --id session-06
 npm run session:run
+npm run session:run:chain
+npm run session:run:capstone
+npm run session:run:failure
+npm run session:run:multi-form
+npm run session:run:handoff
+npm run session:run:traceability
+npm run session:run:gates
+npm run session:run:rubric
+npm run session:run:audit
+npm run session:run:change-control
+npm run session:run:graduation
 ```
 
 ## Repo 結構
 - `README.md`: 主教案（10 steps + 驗收規範）
+- `CONTRIBUTING.md`: 維護與擴充規範
+- `CHANGELOG.md`: 版本變更紀錄
+- `ROADMAP.md`: 後續擴充方向
+- `LEARNING-JOURNEY.md`: 學習階梯與能力對照
+- `pipelines/`: Delphi -> Next.js pipeline 契約
 - `SESSION-01-COMPLEX-EXCEL-LIKE-FORM.md`: 第一次完整實戰演練
+- `SESSION-02-DELPHI-TO-NEXTJS-CHAIN.md`: 產物鏈六階段演練
+- `SESSION-03-CHAIN-TO-CAPSTONE.md`: 產物鏈到 Capstone 整合演練
+- `SESSION-04-FAILURE-INJECTION-AND-RECOVERY.md`: 失敗注入與恢復演練
+- `SESSION-05-MULTI-FORM-PRIORITIZATION.md`: 多表單優先級與切片演練
+- `SESSION-06-HANDOFF-PACKAGE-GENERATION.md`: Human-review 交接包產出演練
+- `SESSION-07-DECISION-LOG-TRACEABILITY.md`: 決策日誌與追蹤矩陣演練
+- `SESSION-08-READINESS-BOARD-AND-GATES.md`: Readiness board 與 release gates 演練
+- `SESSION-09-RUBRIC-CALIBRATION.md`: Rubric v2 校準演練
+- `SESSION-10-EVIDENCE-PACK-AND-AUDIT.md`: 證據包與審計敘事演練
+- `SESSION-11-CHANGE-CONTROL-ROLLBACK.md`: 變更控制與回滾演練
+- `SESSION-12-GRADUATION-MOCK-DELIVERY.md`: 畢業整合演練
 - `prompts/`: 00~10 可重用 prompt packs
 - `rubrics/`: capstone 評分規範
-- `examples/`: capstone 期望輸出骨架
-- `sessions/`: 練習記錄模板
+- `examples/`: capstone 與 pipeline 輸出骨架
+- `sessions/`: sessions 索引與練習記錄模板
 - `scripts/`: 自動檢查與導覽腳本
 - `.cline/workflows/`: 可在 Cline 觸發的流程建議
 - `.clinerules`: Lab 專用 Cline 約束
@@ -895,11 +955,11 @@ If inputs are incomplete, return only Missing Inputs + minimal next-step request
 
 ### 建議使用的本地情境（你目前 workspace 可直接用）
 - Delphi/DFM 來源參考：
-  - `dfm-to-web/examples/forms/ComplexExcelLikeForm.dfm`
-  - `dfm-to-web/README.md`
-  - `dfm-to-web/pipeline.config.json`
+  - `examples/local-inputs/ComplexExcelLikeForm.dfm`
+  - `pipelines/DELPHI-TO-NEXTJS-PIPELINE.md`
+  - `examples/local-inputs/pipeline-config.json`
 - Next.js 目標參考：
-  - `frontend-workshop/labs/week-12-capstone/lab-capstone-delphi-web-transition/LAB.md`
+  - `examples/local-inputs/target-page-requirements.md`
 
 ### 實戰順序
 1. 先把 Step 01~03 做完，得到可執行的 scope 與 token slicing 策略。
@@ -958,3 +1018,25 @@ If inputs are incomplete, return only Missing Inputs + minimal next-step request
 ## Session Packs
 - 第一次完整演練（ComplexExcelLikeForm）：
   - [SESSION-01-COMPLEX-EXCEL-LIKE-FORM.md](./SESSION-01-COMPLEX-EXCEL-LIKE-FORM.md)
+- 第二次產物鏈演練（Delphi Source -> Next.js Page）：
+  - [SESSION-02-DELPHI-TO-NEXTJS-CHAIN.md](./SESSION-02-DELPHI-TO-NEXTJS-CHAIN.md)
+- 第三次整合演練（Artifact Chain -> Capstone）：
+  - [SESSION-03-CHAIN-TO-CAPSTONE.md](./SESSION-03-CHAIN-TO-CAPSTONE.md)
+- 第四次故障演練（Failure Injection + Recovery）：
+  - [SESSION-04-FAILURE-INJECTION-AND-RECOVERY.md](./SESSION-04-FAILURE-INJECTION-AND-RECOVERY.md)
+- 第五次多表單演練（Multi-Form Prioritization + Slicing）：
+  - [SESSION-05-MULTI-FORM-PRIORITIZATION.md](./SESSION-05-MULTI-FORM-PRIORITIZATION.md)
+- 第六次交接包演練（Human-Review Handoff Package）：
+  - [SESSION-06-HANDOFF-PACKAGE-GENERATION.md](./SESSION-06-HANDOFF-PACKAGE-GENERATION.md)
+- 第七次追蹤演練（Decision Log + Traceability Matrix）：
+  - [SESSION-07-DECISION-LOG-TRACEABILITY.md](./SESSION-07-DECISION-LOG-TRACEABILITY.md)
+- 第八次就緒門檻演練（Readiness Board + Release Gates）：
+  - [SESSION-08-READINESS-BOARD-AND-GATES.md](./SESSION-08-READINESS-BOARD-AND-GATES.md)
+- 第九次評分校準演練（Rubric v2 Calibration）：
+  - [SESSION-09-RUBRIC-CALIBRATION.md](./SESSION-09-RUBRIC-CALIBRATION.md)
+- 第十次審計演練（Evidence Pack + Audit Narrative）：
+  - [SESSION-10-EVIDENCE-PACK-AND-AUDIT.md](./SESSION-10-EVIDENCE-PACK-AND-AUDIT.md)
+- 第十一次變更控制演練（Change Control + Rollback Drill）：
+  - [SESSION-11-CHANGE-CONTROL-ROLLBACK.md](./SESSION-11-CHANGE-CONTROL-ROLLBACK.md)
+- 第十二次畢業演練（Graduation Mock Delivery）：
+  - [SESSION-12-GRADUATION-MOCK-DELIVERY.md](./SESSION-12-GRADUATION-MOCK-DELIVERY.md)

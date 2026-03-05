@@ -5,10 +5,10 @@
 這份檔案是「可直接貼到 Cline」的實戰稿。
 
 ## 本次情境（固定）
-- Delphi source: `dfm-to-web/examples/forms/ComplexExcelLikeForm.dfm`
-- Pipeline reference: `dfm-to-web/README.md`
-- Token config reference: `dfm-to-web/pipeline.config.json`
-- Next.js target reference: `frontend-workshop/labs/week-12-capstone/lab-capstone-delphi-web-transition/LAB.md`
+- Delphi source: `examples/local-inputs/ComplexExcelLikeForm.dfm`
+- Pipeline reference: `pipelines/DELPHI-TO-NEXTJS-PIPELINE.md`
+- Token config reference: `examples/local-inputs/pipeline-config.json`
+- Next.js target reference: `examples/local-inputs/target-page-requirements.md`
 - Constraints: `Cline + Qwen3`, `128k`, `offline`, `large Delphi project`
 
 ## 使用方式
@@ -31,11 +31,11 @@ Define task boundaries for planning migration of `ComplexExcelLikeForm.dfm` into
 - Context budget: 128k
 - Network: unavailable
 - Source evidence:
-  - dfm-to-web/examples/forms/ComplexExcelLikeForm.dfm
-  - dfm-to-web/README.md
-  - dfm-to-web/pipeline.config.json
+  - examples/local-inputs/ComplexExcelLikeForm.dfm
+  - pipelines/DELPHI-TO-NEXTJS-PIPELINE.md
+  - examples/local-inputs/pipeline-config.json
 - Target reference:
-  - frontend-workshop/labs/week-12-capstone/lab-capstone-delphi-web-transition/LAB.md
+  - examples/local-inputs/target-page-requirements.md
 
 ## Constraints
 - Use only local evidence listed above.
@@ -151,7 +151,7 @@ Extract semantic intent from `ComplexExcelLikeForm.dfm` into a web-migration sem
 - Step 03 output:
 <PASTE_STEP_03_OUTPUT>
 - Source form focus:
-dfm-to-web/examples/forms/ComplexExcelLikeForm.dfm
+examples/local-inputs/ComplexExcelLikeForm.dfm
 
 ## Constraints
 - No React/Next.js code.

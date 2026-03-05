@@ -1,0 +1,64 @@
+# Changelog
+
+## 2026-03-05
+- Initialized full Agent Context Engineering Lab repository structure.
+- Added 10-step core curriculum in `README.md`.
+- Added `SESSION-01` guided run for ComplexExcelLikeForm.
+- Added learning spine and formal pipeline contract docs.
+- Added `SESSION-02` artifact-chain run (Delphi Source -> Next.js Page).
+- Added `SESSION-03` chain-to-capstone bridge run.
+- Added reusable prompt packs for core, pipeline-chain, and capstone-bridge.
+- Added Cline workflows, rubric, examples, and session record template.
+- Added repository validation scripts and npm command wrappers.
+
+## 2026-03-06
+- Added `SESSION-04-FAILURE-INJECTION-AND-RECOVERY.md`.
+- Added failure injection prompt packs:
+  - `prompts/failure-injection/01-context-overflow-injection.md`
+  - `prompts/failure-injection/02-semantic-ambiguity-injection.md`
+  - `prompts/failure-injection/03-mapping-drift-injection.md`
+  - `prompts/failure-injection/04-recovery-decision-gate.md`
+- Added workflow `run-failure-injection-session.md`.
+- Updated README, sessions index, npm scripts, and validation rules to include session-04.
+- Added `SESSION-05-MULTI-FORM-PRIORITIZATION.md`.
+- Added multi-form prompt packs:
+  - `prompts/multi-form/01-form-inventory-and-scoring.md`
+  - `prompts/multi-form/02-priority-ranking.md`
+  - `prompts/multi-form/03-batch-slicing-strategy.md`
+  - `prompts/multi-form/04-execution-calendar.md`
+  - `prompts/multi-form/05-capstone-feed-contract.md`
+- Added workflow `run-multi-form-session.md`.
+- Updated README, sessions index, npm scripts, and validation rules to include session-05.
+- Added `sessions/catalog.json` and refactored scripts to consume catalog:
+  - `scripts/list-sessions.mjs`
+  - `scripts/run-session.mjs`
+  - `scripts/check-lab.mjs`
+- Added `SESSION-06` to `SESSION-12`:
+  - `SESSION-06-HANDOFF-PACKAGE-GENERATION.md`
+  - `SESSION-07-DECISION-LOG-TRACEABILITY.md`
+  - `SESSION-08-READINESS-BOARD-AND-GATES.md`
+  - `SESSION-09-RUBRIC-CALIBRATION.md`
+  - `SESSION-10-EVIDENCE-PACK-AND-AUDIT.md`
+  - `SESSION-11-CHANGE-CONTROL-ROLLBACK.md`
+  - `SESSION-12-GRADUATION-MOCK-DELIVERY.md`
+- Added prompt packs:
+  - `prompts/handoff/*`
+  - `prompts/traceability/*`
+  - `prompts/readiness-gates/*`
+  - `prompts/rubric-calibration/*`
+  - `prompts/evidence-audit/*`
+  - `prompts/change-control/*`
+  - `prompts/graduation/*`
+- Added workflows:
+  - `run-handoff-session.md`
+  - `run-traceability-session.md`
+  - `run-readiness-gates-session.md`
+  - `run-rubric-calibration-session.md`
+  - `run-evidence-audit-session.md`
+  - `run-change-control-session.md`
+  - `run-graduation-session.md`
+- Added npm session run shortcuts for session-06 to session-12.
+- Updated roadmap to mark session catalog complete and closed at session-12.
+- Removed external dependency references to `dfm-to-web` and `frontend-workshop`.
+- Added local fixtures under `examples/local-inputs/` and repointed session docs to local paths.
+- Added validation guard in `check-lab` to block forbidden external path references.

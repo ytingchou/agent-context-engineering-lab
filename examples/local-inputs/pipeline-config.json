@@ -1,0 +1,6 @@
+{
+  "context_limit": 128000,
+  "reserved_for_reasoning_and_output": 24000,
+  "token_policy": "offline-local-only",
+  "pipeline_mode": "prompt-simulation"
+}
