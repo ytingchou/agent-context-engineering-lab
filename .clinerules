@@ -1,0 +1,7 @@
+# Cline Rules for Agent Context Engineering Lab
+
+1. Work offline: do not rely on web search or external APIs.
+2. Use only files explicitly referenced in the current step.
+3. Keep outputs in requested section format; no extra sections.
+4. If required input is missing, stop and return "Missing Inputs".
+5. Prefer concise, testable acceptance criteria over vague advice.

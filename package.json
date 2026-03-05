@@ -1,0 +1,17 @@
+{
+  "name": "agent-context-engineering-lab",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Step-by-step Cline prompt lab for offline Delphi-to-Next.js context engineering",
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-lab.mjs",
+    "check:strict": "node scripts/check-lab.mjs --strict",
+    "sessions:list": "node scripts/list-sessions.mjs",
+    "prompts:list": "node scripts/list-prompts.mjs",
+    "session:run": "node scripts/run-session.mjs --id session-01"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
