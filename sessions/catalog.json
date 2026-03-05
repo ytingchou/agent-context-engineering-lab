@@ -1,0 +1,98 @@
+[
+  {
+    "id": "session-01",
+    "file": "SESSION-01-COMPLEX-EXCEL-LIKE-FORM.md",
+    "scenario": "ComplexExcelLikeForm",
+    "section_prefix": "Step",
+    "section_count": 10,
+    "workflow": ".cline/workflows/run-agent-context-lab.md"
+  },
+  {
+    "id": "session-02",
+    "file": "SESSION-02-DELPHI-TO-NEXTJS-CHAIN.md",
+    "scenario": "Delphi->Next.js Artifact Chain",
+    "section_prefix": "Stage",
+    "section_count": 6,
+    "workflow": ".cline/workflows/run-artifact-chain-session.md"
+  },
+  {
+    "id": "session-03",
+    "file": "SESSION-03-CHAIN-TO-CAPSTONE.md",
+    "scenario": "Artifact Chain -> Capstone Bridge",
+    "section_prefix": "Phase",
+    "section_count": 4,
+    "workflow": ".cline/workflows/run-chain-to-capstone.md"
+  },
+  {
+    "id": "session-04",
+    "file": "SESSION-04-FAILURE-INJECTION-AND-RECOVERY.md",
+    "scenario": "Failure Injection + Recovery",
+    "section_prefix": "Scenario",
+    "section_count": 4,
+    "workflow": ".cline/workflows/run-failure-injection-session.md"
+  },
+  {
+    "id": "session-05",
+    "file": "SESSION-05-MULTI-FORM-PRIORITIZATION.md",
+    "scenario": "Multi-Form Prioritization + Slicing",
+    "section_prefix": "Scenario",
+    "section_count": 5,
+    "workflow": ".cline/workflows/run-multi-form-session.md"
+  },
+  {
+    "id": "session-06",
+    "file": "SESSION-06-HANDOFF-PACKAGE-GENERATION.md",
+    "scenario": "Human-Review Handoff Package",
+    "section_prefix": "Scenario",
+    "section_count": 5,
+    "workflow": ".cline/workflows/run-handoff-session.md"
+  },
+  {
+    "id": "session-07",
+    "file": "SESSION-07-DECISION-LOG-TRACEABILITY.md",
+    "scenario": "Decision Log + Traceability Matrix",
+    "section_prefix": "Scenario",
+    "section_count": 5,
+    "workflow": ".cline/workflows/run-traceability-session.md"
+  },
+  {
+    "id": "session-08",
+    "file": "SESSION-08-READINESS-BOARD-AND-GATES.md",
+    "scenario": "Readiness Board + Release Gates",
+    "section_prefix": "Scenario",
+    "section_count": 5,
+    "workflow": ".cline/workflows/run-readiness-gates-session.md"
+  },
+  {
+    "id": "session-09",
+    "file": "SESSION-09-RUBRIC-CALIBRATION.md",
+    "scenario": "Rubric v2 Calibration",
+    "section_prefix": "Scenario",
+    "section_count": 5,
+    "workflow": ".cline/workflows/run-rubric-calibration-session.md"
+  },
+  {
+    "id": "session-10",
+    "file": "SESSION-10-EVIDENCE-PACK-AND-AUDIT.md",
+    "scenario": "Evidence Pack + Audit Narrative",
+    "section_prefix": "Scenario",
+    "section_count": 5,
+    "workflow": ".cline/workflows/run-evidence-audit-session.md"
+  },
+  {
+    "id": "session-11",
+    "file": "SESSION-11-CHANGE-CONTROL-ROLLBACK.md",
+    "scenario": "Change Control + Rollback Drill",
+    "section_prefix": "Scenario",
+    "section_count": 5,
+    "workflow": ".cline/workflows/run-change-control-session.md"
+  },
+  {
+    "id": "session-12",
+    "file": "SESSION-12-GRADUATION-MOCK-DELIVERY.md",
+    "scenario": "Graduation Mock Delivery",
+    "section_prefix": "Scenario",
+    "section_count": 5,
+    "workflow": ".cline/workflows/run-graduation-session.md"
+  }
+]

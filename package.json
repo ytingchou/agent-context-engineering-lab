@@ -9,7 +9,19 @@
     "check:strict": "node scripts/check-lab.mjs --strict",
     "sessions:list": "node scripts/list-sessions.mjs",
     "prompts:list": "node scripts/list-prompts.mjs",
-    "session:run": "node scripts/run-session.mjs --id session-01"
+    "session:run:any": "node scripts/run-session.mjs",
+    "session:run": "node scripts/run-session.mjs --id session-01",
+    "session:run:chain": "node scripts/run-session.mjs --id session-02",
+    "session:run:capstone": "node scripts/run-session.mjs --id session-03",
+    "session:run:failure": "node scripts/run-session.mjs --id session-04",
+    "session:run:multi-form": "node scripts/run-session.mjs --id session-05",
+    "session:run:handoff": "node scripts/run-session.mjs --id session-06",
+    "session:run:traceability": "node scripts/run-session.mjs --id session-07",
+    "session:run:gates": "node scripts/run-session.mjs --id session-08",
+    "session:run:rubric": "node scripts/run-session.mjs --id session-09",
+    "session:run:audit": "node scripts/run-session.mjs --id session-10",
+    "session:run:change-control": "node scripts/run-session.mjs --id session-11",
+    "session:run:graduation": "node scripts/run-session.mjs --id session-12"
   },
   "engines": {
     "node": ">=18"

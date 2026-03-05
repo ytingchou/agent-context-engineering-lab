@@ -11,20 +11,27 @@ for (let i = 0; i < args.length; i += 1) {
   }
 }
 
-const catalog = {
-  "session-01": "SESSION-01-COMPLEX-EXCEL-LIKE-FORM.md"
-};
-
-const file = catalog[id];
-if (!file) {
-  console.error(`Unknown session id: ${id}`);
-  console.error(`Known sessions: ${Object.keys(catalog).join(", ")}`);
+const catalogPath = path.join(process.cwd(), "sessions", "catalog.json");
+if (!fs.existsSync(catalogPath)) {
+  console.error("Missing sessions/catalog.json");
+  process.exit(1);
+}
+const sessions = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+if (!Array.isArray(sessions)) {
+  console.error("sessions/catalog.json must be an array.");
   process.exit(1);
 }
 
-const full = path.join(process.cwd(), file);
+const selected = sessions.find((s) => s.id === id);
+if (!selected) {
+  console.error(`Unknown session id: ${id}`);
+  console.error(`Known sessions: ${sessions.map((s) => s.id).join(", ")}`);
+  process.exit(1);
+}
+
+const full = path.join(process.cwd(), selected.file);
 if (!fs.existsSync(full)) {
-  console.error(`Session file missing: ${file}`);
+  console.error(`Session file missing: ${selected.file}`);
   process.exit(1);
 }
 
@@ -32,7 +39,7 @@ console.log(`Session: ${id}`);
 console.log(`File: ${full}`);
 console.log("\nRunbook:");
 console.log("1) Open the session markdown file.");
-console.log("2) Copy Step 01 prompt into Cline, then continue sequentially.");
-console.log("3) Save outputs for each step and feed into next step.");
-console.log("4) Use Repair Prompt when a checkpoint fails.");
-console.log("5) Finish with Step 10 capstone and verify 5 required sections.");
+console.log("2) Copy the first prompt block into Cline, then continue sequentially.");
+console.log("3) Save outputs for each stage/step and feed into the next one.");
+console.log("4) Use Repair Prompt whenever a checkpoint fails.");
+console.log("5) Complete the session exit criteria in that markdown file.");
