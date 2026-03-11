@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-03-11
+- Added `phase-based context control` to Step 03 training content and prompt packs:
+  - `README.md` Step 03 (goal, constraints, output contract, quality gate, and repair prompt)
+  - `prompts/03-token-budget-and-slicing.md`
+  - `SESSION-01-COMPLEX-EXCEL-LIKE-FORM.md` Step 03 prompt/checkpoint
+- Updated `LEARNING-JOURNEY.md` context engineering mapping to include phase-based context flow.
+
 ## 2026-03-05
 - Initialized full Agent Context Engineering Lab repository structure.
 - Added 10-step core curriculum in `README.md`.

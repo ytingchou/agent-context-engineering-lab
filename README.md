@@ -304,18 +304,19 @@ If a path has no risk explanation, remove it.
 
 ## Step 03 - 128k Token 預算與切片 Prompt
 ### Step Goal
-把 context 當成預算管理，明確切成可控批次。
+把 context 當成預算管理，用 phase-based control 明確切成可控批次。
 
 ### Why this matters
 128k 很大但不是無限。大型 Delphi 專案若不切片，後續 prompt 穩定性會下降。
 
 ### Input -> Output
 - Input：Step 02 的 context 盤點
-- Output：`Budget Plan / Slice Strategy / Reserve / Overflow Rule`
+- Output：`Budget Plan / Phase-based Slice Strategy / Reserve / Overflow Rule`
 
 ### How to write this prompt
 - 指定 token 分配比例（例如：輸入 60%、推理與輸出 40%）。
 - 要求切片策略可重複套用。
+- 把切片流程拆成 phase（例如：Phase 0/1/2），每個 phase 都要有 entry/exit gate。
 - 要求包含 overflow 時的降級策略。
 
 ### 你先寫版本
@@ -329,34 +330,38 @@ Design a token budget and chunking strategy for this migration task with 128k co
 You are a token budget planner for Qwen3 (128k context).
 
 ## Objective
-Create a reusable context slicing strategy for a large Delphi project analysis.
+Create a reusable phase-based context slicing strategy for a large Delphi project analysis.
 
 ## Constraints
 - Keep 20-30% reserved for reasoning + output.
 - Assume no internet and no external retrieval.
 - Prefer deterministic, repeatable slicing rules.
+- Use phase-based context control with explicit entry criteria, context cap, and exit criteria per phase.
 
 ## Output Format
 Return exactly these sections:
 1) Budget Allocation (percent + rationale)
 2) Slice Units (by module/form/feature)
-3) Slice Order
+3) Slice Order + Phase Gates
 4) Overflow Handling
 5) What Not to Include
 
 ## Quality Gate
 - Strategy must be executable step-by-step.
+- Every phase must define token cap and completion gate.
 - Overflow handling must include at least 2 fallback levels.
 ```
 
 ### How to test in Cline
 1. 貼示範 prompt。
 2. 檢查是否有「百分比 + 原因」。
-3. 檢查 `Overflow Handling` 至少兩層 fallback。
+3. 檢查每個 phase 是否有 entry/exit gate 與 context cap。
+4. 檢查 `Overflow Handling` 至少兩層 fallback。
 
 ### Pass Criteria
 - 有 5 段固定格式。
 - 切片單位不是抽象語（要能映射到實際模組/表單）。
+- 每個 phase 都有 token 上限與完成條件。
 - 明確保留輸出空間。
 
 ### 常見失敗訊號
@@ -366,7 +371,7 @@ Return exactly these sections:
 ### 修正 prompt A
 ```md
 Make the slice strategy deterministic.
-For each slice unit, define inclusion criteria and stop criteria.
+For each slice unit and phase, define inclusion criteria, stop criteria, and entry/exit gates.
 ```
 
 ### 修正 prompt B

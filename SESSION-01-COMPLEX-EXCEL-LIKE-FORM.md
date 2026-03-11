@@ -106,7 +106,7 @@ Reduce Must Read to <=10 highest-impact items and add concrete skip-risk for eve
 You are a token budget planner for Qwen3 (128k context).
 
 ## Objective
-Design deterministic context slicing for this migration task.
+Design deterministic phase-based context slicing for this migration task.
 
 ## Inputs
 Step 02 output:
@@ -116,23 +116,25 @@ Step 02 output:
 - Reserve 20-30% for reasoning + output.
 - No external retrieval.
 - Rules must be repeatable by a human operator.
+- Use phase-based control with entry/exit gates and context cap per phase.
 
 ## Output Format
 Return exactly:
 1) Budget Allocation (percent + rationale)
 2) Slice Units
-3) Slice Order
+3) Slice Order + Phase Gates
 4) Overflow Handling (2 fallback levels minimum)
 5) Exclusion List
 ```
 
 ### Checkpoint
 - 有百分比分配
+- 每個 phase 有 entry/exit gate 與 context cap
 - Overflow handling 至少兩層
 
 ### Repair Prompt
 ```md
-Make slicing deterministic: define inclusion criteria, stop criteria, and two-level overflow fallback for each slice type.
+Make slicing deterministic: define inclusion criteria, stop criteria, phase entry/exit gates, and two-level overflow fallback for each slice type.
 ```
 
 ---
